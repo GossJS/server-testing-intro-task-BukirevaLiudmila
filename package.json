@@ -6,7 +6,8 @@
   "scripts": {
     "build": "babel index.js --out-file bundle.js",
     "launch": "node bundle.js",
-    "start": "npm run build && npm run launch"
+    "start": "npm run build && npm run launch",
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -23,6 +24,8 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-env": "^1.6.0"
+    "babel-preset-env": "^1.6.0",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.3"
   }
 }

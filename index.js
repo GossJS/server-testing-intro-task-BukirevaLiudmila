@@ -17,8 +17,7 @@ const server = http.createServer((req, res) => {
             res.end('Людмила Букирёва');
             break;
         case '/length':
-            const queryLength = (urlObj.query ? urlObj.query.length : 0).toString();
-            res.end(queryLength);
+            res.end(countLength(urlObj));
             break;
         default:
             res.end('This path is not provided');
@@ -26,4 +25,13 @@ const server = http.createServer((req, res) => {
     }
 });
 
-server.listen(8000, () => console.log("Server start on 8000"));
+server.listen(8000, () => console.log("Server start on port 8000"));
+
+function countLength (urlObj) {
+    const queryLength = (urlObj.query ? urlObj.query.length : 0).toString();
+    return queryLength;
+}
+
+export {
+    countLength
+}
